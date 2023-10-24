@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="card">
+            <h1 class="title">Cifrado César</h1>
+            <p class="text">Introduce la palabra y la clave</p>
+            <input id="input__text" type="text" placeholder="palabra">
+            <div class="number">
+                <input id="number" type="number" min="1" max="25">
+                <p id="display"></p>
+            </div>
+            <div class="buttons">
+                <button class="encrypt" type="submit" onclick="encrypt()">Cifrar</button>
+                <button class="decrypt" type="submit" onclick="decrypt()">Descifrar</button>
+            </div>
+        </div>
+    </main>
+    <div class="value">
+        <p id="answer">Resultado</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

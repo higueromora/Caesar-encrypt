@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
+} */
+
+body{
+    background-image: url(Caesar.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-color: #4b4848;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos a lo largo del eje vertical */
+    align-items: center; /* Centra los elementos a lo largo del eje horizontal */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    margin: auto;
+    text-align: center;
+}
+
+.card{
+    background-color: #3a38389e;
+    border: 1px solid;
+    border-radius: 5%;
+}
+
+.number{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text{
+    padding: 20px;
+}
+
+
+.buttons{
+    padding-top: 4px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    .encrypt{
+        cursor: pointer;
+        padding: 10px;
+        background-color: #bcb9b9;
+        color: #0606069e;
+        transition: all 0.5s;
+    }.encrypt:hover{
+        background-color: #313030;
+        color: #ca14079e;
+    }
+
+    .decrypt{
+        cursor: pointer;
+        padding: 10px;
+        background-color: #bcb9b9;
+        color: #0606069e;
+        transition: all 0.5s;
+    }.decrypt:hover{
+        background-color: #313030;
+        color: #59b9269e;
+    }
+
+}
+
+
+.value {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bfd6df;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: -12px 12px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+@media screen and (max-width: 860px) {
+    body{
+        background-size: cover;
+    }
+}
+
