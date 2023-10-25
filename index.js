@@ -10,10 +10,13 @@ function encrypt() {
     let phrase = document.getElementById('input__text').value; 
 
     if(key === "" && phrase === ""){
+        document.getElementById('display').innerText ="";
         return answerElement.innerHTML = "Introduce una clave y una palabra";
     }else if(key === "" || phrase === ""){
+        document.getElementById('display').innerText ="";
         return answerElement.innerHTML = "Introduce una " + (key === "" ? "clave" : "palabra");
     }else if(!regex.test(phrase)) {
+        document.getElementById('display').innerText ="";
         return answerElement.innerHTML = "Solo se permiten letras";
     }
     
@@ -44,10 +47,13 @@ function decrypt() {
     let phrase = document.getElementById('input__text').value; 
 
     if(key === "" && phrase === ""){
+        document.getElementById('display').innerText ="";
         return answerElement.innerHTML = "Introduce una clave y una palabra";
     }else if(key === "" || phrase === ""){
+        document.getElementById('display').innerText ="";
         return answerElement.innerHTML = "Introduce una " + (key === "" ? "clave" : "palabra");
     }else if(!regex.test(phrase)) {
+        document.getElementById('display').innerText ="";
         return answerElement.innerHTML = "Solo se permiten letras";
     }
 
