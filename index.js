@@ -1,13 +1,16 @@
 //Cifrado César
-function encrypt() {
-    let key = document.getElementById('number').value;
-    let phrase = document.getElementById('input__text').value;
-    if(key === "" && phrase === ""){
-        return document.getElementById('answer').innerHTML = "Introduce una clave y una palabra";
-    }else if(key === ""){
-        return document.getElementById('answer').innerHTML = "Introduce una clave";
-    }else if(phrase === ""){
-        return document.getElementById('answer').innerHTML = "Introduce una palabra";
+let key = document.getElementById('number').value;
+let regex = /^[A-Za-z\s]+$/;
+let phrase = document.getElementById('input__text').value;
+let answerElement = document.getElementById('answer');
+
+function encrypt() {    
+    if(!regex.test(key)) {
+        return answerElement.innerHTML = "Solo se permiten letras";
+    }else if(key === "" && phrase === ""){
+        return answerElement.innerHTML = "Introduce una clave y una palabra";
+    }else if(key === "" || phrase === ""){
+        return answerElement.innerHTML = "Introduce una " + (key = "" ? "clave" : "palabra");
     }
     
     let letter, answer = ''; 
@@ -28,18 +31,17 @@ function encrypt() {
         answer += letter;
     }
     document.getElementById('display').innerText ="Cifrado 🔒";
-    return document.getElementById('answer').innerHTML = "Este es el cifrado " + answer + " y con clave " + key;
+    return answerElement.innerHTML = "Este es el cifrado " + answer + " y con clave " + key;
 }
 
 function decrypt() {
-    let key = document.getElementById('number').value;
-    let phrase = document.getElementById('input__text').value;
-    if(key === "" && phrase === ""){
-        return document.getElementById('answer').innerHTML = "Introduce una clave y una palabra";
-    }else if(key === ""){
-        return document.getElementById('answer').innerHTML = "Introduce una clave";
-    }else if(phrase === ""){
-        return document.getElementById('answer').innerHTML = "Introduce una palabra";
+    
+    if(!regex.test(key)) {
+        return answerElement.innerHTML = "Solo se permiten letras";
+    }else if(key === "" && phrase === ""){
+        return answerElement.innerHTML = "Introduce una clave y una palabra";
+    }else if(key === "" || phrase === ""){
+        return answerElement.innerHTML = "Introduce una " + (key = "" ? "clave" : "palabra");
     }
     let letter, answer = '';
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -56,5 +58,5 @@ function decrypt() {
         answer += letter;
     }
     document.getElementById('display').innerText ="Descifrado 🔓";
-    return document.getElementById('answer').innerHTML ="Este es el descifrado " + answer + " y con clave " + key;
+    return answerElement.innerHTML ="Este es el descifrado " + answer + " y con clave " + key;
 }
