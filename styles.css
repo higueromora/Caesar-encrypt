@@ -92,5 +92,14 @@ main {
     body{
         background-size: cover;
     }
+    
+}
+
+/* Para pantallas con una altura menor como 653px se ajuste bien el resultado */
+@media screen and (max-width: 400px){
+    .value{
+        top: 10%;
+        padding: 0px;
+    }
 }
 
